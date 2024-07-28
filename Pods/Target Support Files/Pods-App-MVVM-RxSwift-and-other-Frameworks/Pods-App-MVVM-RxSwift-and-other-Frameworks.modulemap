@@ -1,0 +1,6 @@
+framework module Pods_App_MVVM_RxSwift_and_other_Frameworks {
+  umbrella header "Pods-App-MVVM-RxSwift-and-other-Frameworks-umbrella.h"
+
+  export *
+  module * { export * }
+}
