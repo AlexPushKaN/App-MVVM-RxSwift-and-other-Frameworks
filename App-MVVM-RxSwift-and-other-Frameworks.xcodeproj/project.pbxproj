@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D6588562C563C8B004C745B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588552C563C8B004C745B /* Coordinator.swift */; };
+		4D6588582C563CAD004C745B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588572C563CAD004C745B /* Scene.swift */; };
+		4D65885A2C563CD4004C745B /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588592C563CD4004C745B /* SplashViewModel.swift */; };
+		4D65885E2C563D6B004C745B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65885D2C563D6B004C745B /* SplashViewController.swift */; };
+		4D6588602C563D8B004C745B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65885F2C563D8B004C745B /* MainViewController.swift */; };
+		4D6588612C563E59004C745B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65885B2C563CFE004C745B /* MainViewModel.swift */; };
 		4D9EE9CF2C55567B002BF6B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EE9CE2C55567B002BF6B7 /* AppDelegate.swift */; };
 		4D9EE9D12C55567B002BF6B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9EE9D02C55567B002BF6B7 /* SceneDelegate.swift */; };
 		4D9EE9D82C55567D002BF6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9EE9D72C55567D002BF6B7 /* Assets.xcassets */; };
@@ -17,6 +23,12 @@
 /* Begin PBXFileReference section */
 		01471F0859F49A2B09F6437C /* Pods-App-MVVM-RxSwift-and-other-Frameworks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-MVVM-RxSwift-and-other-Frameworks.debug.xcconfig"; path = "Target Support Files/Pods-App-MVVM-RxSwift-and-other-Frameworks/Pods-App-MVVM-RxSwift-and-other-Frameworks.debug.xcconfig"; sourceTree = "<group>"; };
 		0CFA133F69B48C9A04AB7A94 /* Pods_App_MVVM_RxSwift_and_other_Frameworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_MVVM_RxSwift_and_other_Frameworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6588552C563C8B004C745B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4D6588572C563CAD004C745B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		4D6588592C563CD4004C745B /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		4D65885B2C563CFE004C745B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4D65885D2C563D6B004C745B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4D65885F2C563D8B004C745B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4D9EE9CB2C55567B002BF6B7 /* App-MVVM-RxSwift-and-other-Frameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App-MVVM-RxSwift-and-other-Frameworks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9EE9CE2C55567B002BF6B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D9EE9D02C55567B002BF6B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +67,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4D6588622C5640A7004C745B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4D6588552C563C8B004C745B /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4D6588632C5640BA004C745B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				4D6588572C563CAD004C745B /* Scene.swift */,
+				4D65885D2C563D6B004C745B /* SplashViewController.swift */,
+				4D65885F2C563D8B004C745B /* MainViewController.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		4D6588652C5640D5004C745B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D6588592C563CD4004C745B /* SplashViewModel.swift */,
+				4D65885B2C563CFE004C745B /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4D9EE9C22C55567B002BF6B7 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +117,9 @@
 			children = (
 				4D9EE9CE2C55567B002BF6B7 /* AppDelegate.swift */,
 				4D9EE9D02C55567B002BF6B7 /* SceneDelegate.swift */,
+				4D6588622C5640A7004C745B /* Coordinator */,
+				4D6588632C5640BA004C745B /* Scene */,
+				4D6588652C5640D5004C745B /* ViewModel */,
 				4D9EE9D92C55567D002BF6B7 /* LaunchScreen.storyboard */,
 				4D9EE9D72C55567D002BF6B7 /* Assets.xcassets */,
 				4D9EE9DC2C55567D002BF6B7 /* Info.plist */,
@@ -199,8 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D65885A2C563CD4004C745B /* SplashViewModel.swift in Sources */,
+				4D6588582C563CAD004C745B /* Scene.swift in Sources */,
 				4D9EE9CF2C55567B002BF6B7 /* AppDelegate.swift in Sources */,
 				4D9EE9D12C55567B002BF6B7 /* SceneDelegate.swift in Sources */,
+				4D6588562C563C8B004C745B /* Coordinator.swift in Sources */,
+				4D65885E2C563D6B004C745B /* SplashViewController.swift in Sources */,
+				4D6588602C563D8B004C745B /* MainViewController.swift in Sources */,
+				4D6588612C563E59004C745B /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

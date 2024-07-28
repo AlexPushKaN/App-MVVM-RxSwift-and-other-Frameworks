@@ -8,6 +8,7 @@ target 'App-MVVM-RxSwift-and-other-Frameworks' do
   
   pod 'Alamofire'
   pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SnapKit'
 
 end
