@@ -11,6 +11,7 @@
 		4D5C48AF2C58C13300CCFC75 /* NewsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C48AB2C58C13200CCFC75 /* NewsEntity+CoreDataProperties.swift */; };
 		4D5C48B02C58C13300CCFC75 /* NewsEnties+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C48AC2C58C13300CCFC75 /* NewsEnties+CoreDataClass.swift */; };
 		4D5C48B12C58C13300CCFC75 /* NewsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C48AD2C58C13300CCFC75 /* NewsEntity+CoreDataClass.swift */; };
+		4D5C48B32C58C2AC00CCFC75 /* AnimationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C48B22C58C2AC00CCFC75 /* AnimationService.swift */; };
 		4D6588562C563C8B004C745B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588552C563C8B004C745B /* Coordinator.swift */; };
 		4D6588582C563CAD004C745B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588572C563CAD004C745B /* Scene.swift */; };
 		4D65885A2C563CD4004C745B /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6588592C563CD4004C745B /* SplashViewModel.swift */; };
@@ -35,6 +36,7 @@
 		4D5C48AB2C58C13200CCFC75 /* NewsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D5C48AC2C58C13300CCFC75 /* NewsEnties+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsEnties+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4D5C48AD2C58C13300CCFC75 /* NewsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D5C48B22C58C2AC00CCFC75 /* AnimationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationService.swift; sourceTree = "<group>"; };
 		4D6588552C563C8B004C745B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		4D6588572C563CAD004C745B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		4D6588592C563CD4004C745B /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -113,8 +115,9 @@
 		4D6588692C5646A2004C745B /* Servises */ = {
 			isa = PBXGroup;
 			children = (
-				4D65888B2C5648B0004C745B /* CoreDataStack.swift */,
+				4D5C48B22C58C2AC00CCFC75 /* AnimationService.swift */,
 				4D65888D2C56497B004C745B /* NetworkManager.swift */,
+				4D65888B2C5648B0004C745B /* CoreDataStack.swift */,
 				4D65886A2C5646B2004C745B /* CoreDataModel */,
 			);
 			path = Servises;
@@ -301,6 +304,7 @@
 				4D5C48AE2C58C13300CCFC75 /* NewsEnties+CoreDataProperties.swift in Sources */,
 				4D65888C2C5648B0004C745B /* CoreDataStack.swift in Sources */,
 				4D6588912C5649C6004C745B /* ContentModel.swift in Sources */,
+				4D5C48B32C58C2AC00CCFC75 /* AnimationService.swift in Sources */,
 				4D6588682C5645C7004C745B /* App.xcdatamodeld in Sources */,
 				4D5C48AF2C58C13300CCFC75 /* NewsEntity+CoreDataProperties.swift in Sources */,
 				4D6588612C563E59004C745B /* MainViewModel.swift in Sources */,

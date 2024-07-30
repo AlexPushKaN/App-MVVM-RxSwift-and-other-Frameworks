@@ -13,5 +13,8 @@ final class SplashViewModel {
     var goToMain = PublishSubject<Void>()
     
     func show(mask: CAShapeLayer, view: UIView) {
+        AnimationService.contraction(mask: mask, view: view) {
+            self.goToMain.onNext(())
+        }
     }
 }

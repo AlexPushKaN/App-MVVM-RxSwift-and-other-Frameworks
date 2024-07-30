@@ -32,7 +32,7 @@ final class Coordinator {
     }
     
     private func setupMainViewController() {
-        let mainViewModel = MainViewModel()
+        let mainViewModel = MainViewModel(networkService: NetworkManager(), dataService: CoreDataStack.shared)
         let mainViewController = MainViewController(mainViewModel: mainViewModel)
         
         window.rootViewController = mainViewController
