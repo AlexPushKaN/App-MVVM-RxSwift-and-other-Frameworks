@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="Vtx-sx-iaz" customClass="DisplayOfInformationView" customModule="App_MVVM_RxSwift_and_other_Frameworks">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OP-8w-LTY">
+                    <rect key="frame" x="16" y="8" width="218" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MH7-VX-GI3">
+                    <rect key="frame" x="115" y="16" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Kqu-9m-DDX"/>
+                        <constraint firstAttribute="height" constant="20" id="ekD-DG-qtS"/>
+                    </constraints>
+                    <color key="color" name="AccentColor"/>
+                </activityIndicatorView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMq-93-AWk">
+                    <rect key="frame" x="16" y="52" width="218" height="33.333333333333343"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Action"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="EZc-J1-NkH"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7OP-8w-LTY" firstAttribute="leading" secondItem="EZc-J1-NkH" secondAttribute="leading" constant="16" id="EVl-l8-9P2"/>
+                <constraint firstItem="DMq-93-AWk" firstAttribute="leading" secondItem="EZc-J1-NkH" secondAttribute="leading" constant="16" id="IUR-0C-Z73"/>
+                <constraint firstItem="DMq-93-AWk" firstAttribute="top" secondItem="MH7-VX-GI3" secondAttribute="bottom" constant="16" id="QfR-Xb-Bqg"/>
+                <constraint firstItem="MH7-VX-GI3" firstAttribute="centerX" secondItem="7OP-8w-LTY" secondAttribute="centerX" id="RkG-55-CYe"/>
+                <constraint firstItem="EZc-J1-NkH" firstAttribute="trailing" secondItem="DMq-93-AWk" secondAttribute="trailing" constant="16" id="VZv-uN-c0V"/>
+                <constraint firstItem="7OP-8w-LTY" firstAttribute="top" secondItem="Vtx-sx-iaz" secondAttribute="top" constant="8" id="Zfz-4l-lVM"/>
+                <constraint firstItem="DMq-93-AWk" firstAttribute="top" secondItem="7OP-8w-LTY" secondAttribute="bottom" constant="8" id="gip-XC-3D8"/>
+                <constraint firstAttribute="bottom" secondItem="DMq-93-AWk" secondAttribute="bottom" constant="14.666666666666671" id="ogK-xC-WBh"/>
+                <constraint firstItem="MH7-VX-GI3" firstAttribute="top" secondItem="Vtx-sx-iaz" secondAttribute="top" constant="16" id="sio-JQ-WZa"/>
+                <constraint firstItem="EZc-J1-NkH" firstAttribute="trailing" secondItem="7OP-8w-LTY" secondAttribute="trailing" constant="16" id="uVs-3D-Fll"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="actionButton" destination="DMq-93-AWk" id="JX0-uy-nL1"/>
+                <outlet property="connectionTryingsIndicator" destination="MH7-VX-GI3" id="Smm-dc-kdt"/>
+                <outlet property="informationLabel" destination="7OP-8w-LTY" id="n1T-f3-2yo"/>
+            </connections>
+            <point key="canvasLocation" x="-70.769230769230774" y="103.7914691943128"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

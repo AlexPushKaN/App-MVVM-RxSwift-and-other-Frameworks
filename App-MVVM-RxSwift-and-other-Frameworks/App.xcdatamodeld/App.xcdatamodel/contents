@@ -6,6 +6,7 @@
     <entity name="NewsEntity" representedClassName=".NewsEntity" syncable="YES">
         <attribute name="descript" optional="YES" attributeType="String"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="imageFromNet" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="publishedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uniqueNewsIdentifier" attributeType="String"/>

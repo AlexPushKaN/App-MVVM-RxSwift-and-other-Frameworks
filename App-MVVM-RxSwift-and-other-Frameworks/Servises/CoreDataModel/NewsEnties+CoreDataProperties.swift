@@ -1,8 +1,8 @@
 //
 //  NewsEnties+CoreDataProperties.swift
-//  App-MVVM-RxSwift-and-other-Frameworks
+//  
 //
-//  Created by Александр Муклинов on 28.07.2024.
+//  Created by Александр Муклинов on 31.07.2024.
 //
 //
 
@@ -52,9 +52,5 @@ extension NewsEnties {
 
     @objc(removeNewsEntity:)
     @NSManaged public func removeFromNewsEntity(_ values: NSOrderedSet)
-
-}
-
-extension NewsEnties : Identifiable {
 
 }

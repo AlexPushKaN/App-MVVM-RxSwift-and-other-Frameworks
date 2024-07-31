@@ -41,8 +41,11 @@ class MainViewModel {
             })
             .disposed(by: disposeBag)
         
+        var isGetFromStorage: Bool = false
+        
         if let contentData = try? dataService.mainContext.fetch(NewsEnties.fetchRequest()), !contentData.isEmpty {
             guard let content = contentData.first else { return }
+            isGetFromStorage = true
             let mappedContent = ContentModel.mapFrom(enties: content)
             self.content.accept(mappedContent)
             if let contentSize = content.newsEntity {
@@ -55,7 +58,7 @@ class MainViewModel {
         content.subscribe(onNext: { [weak self] _ in
             guard let strongSelf = self else { return }
             guard !strongSelf.content.value.isEmpty else { return }
-            if strongSelf.content.value.count == strongSelf.contentSize  {
+            if strongSelf.content.value.count == strongSelf.contentSize, !isGetFromStorage {
                 strongSelf.isContentDownloaded = true
                 DispatchQueue.global(qos: .utility).async {
                     let contentCopy = strongSelf.content.value
@@ -70,35 +73,13 @@ class MainViewModel {
     func downloadContent() {
         
         guard contentPageNumber <= maxPage, isContentDownloaded else {
+            
             if !isContentDownloaded {
                 showDownloadsOfNewsNotFinish.onNext(())
             } else if contentPageNumber > maxPage {
                 showAboutPageLimit.onNext(())
-                
-                print(content.value.count, " - count content news")
-                var onlyContent = [URL]()
-                content.value.forEach { news in
-                    if let url = news.urlToSourсe {
-                        onlyContent.append(url)
-                    }
-                }
-
-                var counts: [URL: Int] = [:]
-                onlyContent.forEach { url in
-                    counts[url, default: 0] += 1
-                }
-
-                // Вывод количества вхождений каждого URL
-                for (url, count) in counts {
-                    print("\(url): \(count)")
-                }
-
-                // Для получения только одинаковых элементов
-                let duplicateURLs = counts.filter { $0.value > 1 }
-                print("")
-                print("Duplicate URLs: \(duplicateURLs)")
-
             }
+            
             return
         }
         
@@ -120,22 +101,23 @@ class MainViewModel {
                             news.imageData = data
                             strongSelf.appendToContent(news)
                         case .failure(_):
-                            getRandomPicture()
+                            strongSelf.getRandomPicture(for: news)
                         }
                     }
                 } else {
-                    getRandomPicture()
-                }
-                
-                func getRandomPicture() {
-                    let randomNumberImage = [1,2,3,4,5,6,7].randomElement()
-                    if let image = UIImage(named: "cat \(String(randomNumberImage!))"),
-                       let imageData = image.pngData() {
-                        news.imageData = imageData
-                        strongSelf.appendToContent(news)
-                    }
+                    strongSelf.getRandomPicture(for: news)
                 }
             }
+        }
+    }
+    
+    private func getRandomPicture(for news: ContentModel.News) {
+        let randomNumberImage = [1,2,3,4,5,6,7].randomElement()
+        if let image = UIImage(named: "cat \(String(randomNumberImage!))"),
+           let imageData = image.pngData() {
+            var currentNews = news
+            currentNews.imageData = imageData
+            appendToContent(currentNews)
         }
     }
     

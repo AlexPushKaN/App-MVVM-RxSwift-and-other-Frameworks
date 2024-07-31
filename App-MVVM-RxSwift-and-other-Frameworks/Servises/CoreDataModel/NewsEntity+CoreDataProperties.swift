@@ -1,8 +1,8 @@
 //
 //  NewsEntity+CoreDataProperties.swift
-//  App-MVVM-RxSwift-and-other-Frameworks
+//  
 //
-//  Created by Александр Муклинов on 28.07.2024.
+//  Created by Александр Муклинов on 31.07.2024.
 //
 //
 
@@ -22,10 +22,7 @@ extension NewsEntity {
     @NSManaged public var title: String?
     @NSManaged public var uniqueNewsIdentifier: String?
     @NSManaged public var urlToSource: URL?
+    @NSManaged public var imageFromNet: Bool
     @NSManaged public var newsEnties: NewsEnties?
-
-}
-
-extension NewsEntity : Identifiable {
 
 }

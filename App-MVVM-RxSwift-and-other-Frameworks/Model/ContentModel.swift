@@ -28,6 +28,7 @@ struct ContentModel: Decodable {
         var publishedAt: Date?
         var description: String?
         var urlToImage: URL?
+        var imageFromNet: Bool = false
         var urlToSourсe: URL?
         
         //for storageData
@@ -46,6 +47,7 @@ struct ContentModel: Decodable {
             if let urlToImage = try container.decodeIfPresent(String.self, forKey: .urlToImage),
                let url = URL(string: urlToImage) {
                 self.urlToImage = url
+                self.imageFromNet = true
             }
             if let urlToSource = try container.decodeIfPresent(String.self, forKey: .urlToSourсe) {
                 if let url = URL(string: urlToSource) {
@@ -55,12 +57,13 @@ struct ContentModel: Decodable {
             }
         }
         
-        init(title: String, publishedAt: Date, description: String, urlToSource: URL, imageData: Data?, uniqueNewsIdentifier: String) {
+        init(title: String, publishedAt: Date, description: String, urlToSource: URL, imageData: Data?, imageFromNet: Bool, uniqueNewsIdentifier: String) {
             self.title = title
             self.publishedAt = publishedAt
             self.description = description
             self.urlToSourсe = urlToSource
             self.imageData = imageData
+            self.imageFromNet = imageFromNet
             self.uniqueNewsIdentifier = uniqueNewsIdentifier
         }
     }
@@ -94,12 +97,22 @@ extension ContentModel {
                 if let _ = make(request: fetchRequest, in: context) {
                     continue
                 } else {
-                    let newsEntity = creatingToEntityIn(context: context, from: args, for: enties)
+                    
+                    let newsEntity = EntityType(context: context)
+                    
+                    newsEntity.title = args.title
+                    newsEntity.publishedAt = args.publishedAt
+                    newsEntity.descript = args.description
+                    newsEntity.urlToSource = args.urlToSourсe
+                    newsEntity.imageData = args.imageData
+                    newsEntity.imageFromNet = args.imageFromNet
+                    newsEntity.uniqueNewsIdentifier = args.uniqueNewsIdentifier
+                    
                     enties.addToNewsEntity(newsEntity)
                 }
             }
         }
-        print("saveContext")
+        
         try? context.save()
     }
     
@@ -117,18 +130,6 @@ extension ContentModel {
         
         return nil
     }
-    
-    private static func creatingToEntityIn(context: NSManagedObjectContext, from news: StorageData, for newsEnties: NewsEnties) -> NewsEntity {
-        let newsEntity = EntityType(context: context)
-        newsEntity.title = news.title
-        newsEntity.publishedAt = news.publishedAt
-        newsEntity.descript = news.description
-        newsEntity.urlToSource = news.urlToSourсe
-        newsEntity.imageData = news.imageData
-        newsEntity.uniqueNewsIdentifier = news.uniqueNewsIdentifier
-        newsEntity.newsEnties = newsEnties
-        return newsEntity
-    }
 
     static func mapFrom(enties: EntiesType) -> [StorageData] {
 
@@ -140,12 +141,13 @@ extension ContentModel {
                   let description = newsEntity.descript,
                   let urlToSource = newsEntity.urlToSource,
                   let uniqueNewsIdentifier = newsEntity.uniqueNewsIdentifier else { return }
-            
+
             let news = News(title: title,
                             publishedAt: publishedAt,
                             description: description,
                             urlToSource: urlToSource,
-                            imageData: newsEntity.imageData,
+                            imageData: newsEntity.imageData, 
+                            imageFromNet: newsEntity.imageFromNet,
                             uniqueNewsIdentifier: uniqueNewsIdentifier)
             
             storageData.append(news)
